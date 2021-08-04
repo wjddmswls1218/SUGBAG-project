@@ -76,7 +76,7 @@
     margin: 0px 40px 0px 0px;
   }
 
-  .header input[type="text"] {
+  .header .search input[type="text"] {
     width: 150px;
     outline: none;
     background: none;
@@ -89,7 +89,7 @@
     padding: 7px;
   }
 
-  .header input[type="submit"] {
+  .header .search input[type="submit"] {
     height: 29px;
 
     outline: none;
@@ -103,5 +103,9 @@
     padding: 8px;
 
     margin-left: 8px;
+  }
+
+  a {
+    font-family: "Varela Round", sans-serif;
   }
 }

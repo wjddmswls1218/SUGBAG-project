@@ -6,6 +6,10 @@ html(lang="en")
         title SUGBAG
         link(rel="stylesheet", href="/css/styles.css")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet")
+
     body
         section.pc_screen
             p We Only Support Mobile Screens
@@ -13,15 +17,16 @@ html(lang="en")
         section.mobile_srceen
             
             main.main
-                block content
+                block content 
 
         header.header
             a(href="/")
                 i.fas.fa-bed.fa-2x  
                 
-            form(action="#" method="post")
-                input(type="text" placeholder="검색하세요")
-                input(type="submit" value="검색")
+            section.search 
+                form(action="#" method="get")
+                    input(type="text" name="searchValue" placeholder="검색하세요")
+                    input(type="submit" value="검색")
 
         footer.footer
             div
