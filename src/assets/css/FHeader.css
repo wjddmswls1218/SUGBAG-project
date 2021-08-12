@@ -51,7 +51,7 @@ body {
 }
 
 .h_link .h_link__col1 {
-  width: 80%;
+  width: 85%;
   background-color: palegoldenrod;
   padding: 20px;
 
@@ -80,7 +80,7 @@ body {
 }
 
 .h_link .h_link__col2 {
-  width: 80%;
+  width: 85%;
   background-color: rgb(48, 46, 27);
   padding: 20px;
 
@@ -91,7 +91,7 @@ body {
 }
 
 .h_link .h_link__col3 {
-  width: 80%;
+  width: 85%;
   background-color: rgb(218, 200, 0);
   padding: 20px;
 
@@ -99,6 +99,17 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.h_link p {
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 5px 1px 0px 0px;
+}
+
+.h_link i {
+  color: rgb(74, 74, 74);
 }
 
 .board {
