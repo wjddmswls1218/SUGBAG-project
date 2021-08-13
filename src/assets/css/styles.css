@@ -8,7 +8,7 @@
 
   .pc_screen {
     width: 100%;
-    height: 100vh;
+    height: 1000px;
     background-color: rgb(21, 62, 133);
     color: rgb(227, 225, 225);
     font-size: 42px;
