@@ -2,4 +2,10 @@ extends ./base.pug
 
 block content  
 
-    
+    section.search
+        form(action="#" method="post")
+            a(href="/")
+                input(type="button" value="BACK")
+            input(type="text" name="searchValue" placeholder="검색어를 입력해주세요.")
+            input(type="button" value="search")
+

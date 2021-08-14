@@ -8,6 +8,10 @@ export const mainController = async (req, res) => {
   res.render("main");
 };
 
+export const searchController = (req, res) => {
+  res.render("search");
+};
+
 export const hotelController = (req, res) => {
   res.render("hotel");
 };
