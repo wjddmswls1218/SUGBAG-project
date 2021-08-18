@@ -1,9 +1,19 @@
+import "../models/User";
+import "../models/Comment";
+import "../models/Product";
+
 export const mainController = async (req, res) => {
   const {
     query: { searchValue },
   } = req;
 
   console.log(searchValue);
+
+  try {
+  } catch (e) {
+    console.log(e);
+    res.render("main");
+  }
 
   res.render("main");
 };
