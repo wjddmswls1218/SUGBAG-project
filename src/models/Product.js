@@ -4,6 +4,11 @@ const Schema = mongoose.Schema;
 
 const Product = new Schema(
   {
+    Pname: {
+      type: String,
+      required: true,
+    },
+
     Comment: {
       type: Array,
       required: true,
@@ -20,7 +25,7 @@ const Product = new Schema(
       default: true,
     },
 
-    createAt: {
+    createdAt: {
       type: String,
       required: true,
     },
@@ -43,6 +48,11 @@ const Product = new Schema(
 
     socpe: {
       type: Number,
+      required: true,
+    },
+
+    divide: {
+      type: String,
       required: true,
     },
   },

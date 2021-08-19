@@ -1,40 +1,6 @@
-body {
-  width: 100%;
-}
-
-.header {
-  width: 100%;
-  height: 44px;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  outline: 1px solid #999;
-}
-
-.header .m {
-  margin-left: 6px;
-  font-size: 22px;
-}
-
-.header p {
-  font-size: 30px;
-  font-weight: 600;
-
-  margin-left: 148px;
-
-  color: #999;
-}
-
-.header .s {
-  font-size: 22px;
-  margin-left: 140px;
-}
-
 .imgBox {
   width: 100%;
-  height: 187px;
+  height: calc(100vh - 60px);
   background-image: url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1778&q=80");
   background-size: cover;
 }
@@ -42,7 +8,6 @@ body {
 .h_link {
   width: 100%;
   height: 269px;
-  background-color: orange;
 
   display: flex;
   flex-direction: column;
@@ -50,64 +15,62 @@ body {
   justify-content: center;
 
   cursor: pointer;
+  background-color: rgb(250, 250, 250);
 }
 
 .h_link .h_link__col1 {
   width: 85%;
-  background-color: palegoldenrod;
+
   padding: 20px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-}
 
-.h_link__col1__1,
-.h_link__col1__2,
-.h_link__col1__3 {
-  margin: 0px 35px 0px 35px;
-  color: #000;
-}
-
-.h_link__col2__1,
-.h_link__col2__2,
-.h_link__col2__3 {
-  margin: 0px 35px 0px 35px;
-}
-
-.h_link__col3__1,
-.h_link__col3__2 {
-  margin: 0px 35px 0px 35px;
+  border-top: 0.1px solid rgb(123, 123, 123);
 }
 
 .h_link .h_link__col2 {
   width: 85%;
-  background-color: rgb(48, 46, 27);
+
   padding: 20px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  border-top: 0.01px solid rgb(123, 123, 123);
 }
 
 .h_link .h_link__col3 {
   width: 85%;
-  background-color: rgb(218, 200, 0);
+
   padding: 20px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  border-top: 0.01px solid rgb(123, 123, 123);
+  border-bottom: 0.01px solid rgb(123, 123, 123);
+}
+
+.h_link .h_link__col1__1:hover,
+.h_link__col1__2:hover,
+.h_link__col1__3:hover {
+  background-color: rgb(223, 223, 223);
+  border-radius: 5 px;
 }
 
 .h_link p {
-  color: #fff;
-  font-weight: 500;
-  font-size: 15px;
-  margin: 5px 1px 0px 0px;
+  color: rgb(57, 57, 57);
+  font-weight: 700;
+  font-size: 17px;
+  margin: 5px 20px 0px 0px;
+  padding: 10px;
 }
 
 .h_link i {
@@ -117,34 +80,9 @@ body {
 .newRoom {
   width: 100%;
   height: 187px;
-  background-color: rgb(131, 172, 49);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.footer {
-  width: 100%;
-  height: 300px;
-  background-color: rgb(174, 174, 174);
-}
-
-.footer .p__col1 {
-  font-size: 13px;
-  padding: 3px;
-  margin-left: 13px;
-}
-
-.footer .p__col2 {
-  font-size: 10px;
-  padding: 3px;
-  margin-left: 13px;
-}
-
-.footer .eamil {
-  font-size: 13px;
-  margin: 0px 10px 10px 10px;
-  padding: 10px;
 }

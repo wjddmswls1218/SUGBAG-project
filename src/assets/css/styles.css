@@ -1,7 +1,7 @@
 @import "./reset.css";
 @import "./FHeader.css";
 @import "./search.css";
-
+@import "./hotel.css";
 @media screen and (min-width: 450px) {
   .mobile_srceen {
     display: none;
@@ -32,17 +32,81 @@
   }
 
   .mobile_srceen {
+    width: 100%;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
   }
+  .header {
+    width: 100%;
+    height: 7%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    outline: 1px solid #999;
+    background-color: #fff;
+
+    position: fixed;
+    top: 0;
+
+    left: 0;
+    right: 0;
+  }
+
+  .header .m {
+    margin-left: 6px;
+    font-size: 22px;
+  }
+
+  .header p {
+    font-size: 30px;
+    font-weight: 600;
+
+    margin-left: 148px;
+
+    color: #999;
+  }
+
+  .header .s {
+    font-size: 22px;
+    margin-left: 140px;
+  }
 
   .main {
     width: 100%;
+    height: 70%;
   }
 
   a {
     font-family: "Varela Round", sans-serif;
+  }
+
+  .footer {
+    width: 100%;
+    height: 30%;
+    background-color: rgb(174, 174, 174);
+  }
+
+  .footer .p__col1 {
+    font-size: 13px;
+    padding: 3px;
+    margin-left: 13px;
+  }
+
+  .footer .p__col2 {
+    font-size: 10px;
+    padding: 3px;
+    margin-left: 13px;
+  }
+
+  .footer .eamil {
+    font-size: 13px;
+    margin: 0px 10px 10px 10px;
+    padding: 10px;
   }
 }

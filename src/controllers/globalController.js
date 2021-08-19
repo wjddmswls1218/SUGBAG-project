@@ -1,6 +1,6 @@
-import "../models/User";
-import "../models/Comment";
-import "../models/Product";
+import User from "../models/User";
+import Comment from "../models/Comment";
+import Product from "../models/Product";
 
 export const mainController = async (req, res) => {
   const {
@@ -22,8 +22,11 @@ export const searchController = (req, res) => {
   res.render("search");
 };
 
-export const hotelController = (req, res) => {
-  res.render("hotel");
+export const hotelController = async (req, res) => {
+  const Productlist = await Product.find();
+
+  console.log(Productlist);
+  res.render("hotel", { list: Productlist });
 };
 
 export const motelController = (req, res) => {
