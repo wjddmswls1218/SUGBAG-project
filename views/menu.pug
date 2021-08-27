@@ -1,0 +1,15 @@
+extends ./base.pug
+
+block content  
+    .login
+        .login__top
+            form(action="/login" method="post")
+                .loginLabel
+                    input(type="text" name="input_id" placeholder="id")
+                
+                .loginLabel
+                    input(type="password" name="input_pass" placeholder="password")
+
+                .forgetpass
+                    input(type="button" name="Fpass" placeholder="잊은 비밀번호 찾기")
+                input(type="submit" value="LOGIN")

@@ -1,0 +1,26 @@
+.login {
+  width: 100%;
+  height: 40%;
+  margin-top: 60px;
+
+  padding: 10px;
+}
+
+.login__top {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .loginLabel input {
+  outline: none;
+  border: none;
+
+  padding: 7px;
+  border-radius: 7px;
+}

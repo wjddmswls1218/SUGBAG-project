@@ -1,11 +1,11 @@
-import express from "express";
-import dotenv from "dotenv";
+const express = require("express");
+const dotenv = require("dotenv");
 dotenv.config();
-import bodyParser from "body-parser";
-import morgan from "morgan";
-import path from "path";
-import globalRouter from "./routers/globalRouter";
-import connect from "../db";
+const bodyParser = require("body-parser");
+const morgan = require("morgan");
+const path = require("path");
+const globalRouter = require("./routers/globalRouter");
+const connect = require("../db");
 
 const PORT = process.env.PORT;
 

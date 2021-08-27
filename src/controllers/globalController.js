@@ -1,8 +1,8 @@
-import User from "../models/User";
-import Comment from "../models/Comment";
-import Product from "../models/Product";
+const User = require("../models/User");
+const Comment = require("../models/Comment");
+const Product = require("../models/Product");
 
-export const mainController = async (req, res) => {
+const mainController = async (req, res) => {
   const {
     query: { searchValue },
   } = req;
@@ -18,37 +18,61 @@ export const mainController = async (req, res) => {
   res.render("main");
 };
 
-export const searchController = (req, res) => {
+const searchController = (req, res) => {
   res.render("search");
 };
 
-export const hotelController = async (req, res) => {
+const hotelController = async (req, res) => {
   const Productlist = await Product.find();
 
   console.log(Productlist);
   res.render("hotel", { list: Productlist });
 };
 
-export const motelController = (req, res) => {
+const motelController = (req, res) => {
   res.render("motel");
 };
 
-export const campingController = (req, res) => {
+const campingController = (req, res) => {
   res.render("camping");
 };
 
-export const glampingController = (req, res) => {
+const glampingController = (req, res) => {
   res.render("glamping");
 };
 
-export const hanokController = (req, res) => {
+const hanokController = (req, res) => {
   res.render("hanok");
 };
 
-export const pensionController = (req, res) => {
+const pensionController = (req, res) => {
   res.render("pension");
 };
 
-export const resortController = (req, res) => {
+const resortController = (req, res) => {
   res.render("resort");
 };
+
+const menuController = (req, res) => {
+  res.render("menu");
+};
+
+const loginController = (req, res) => {
+  res.render("login");
+};
+
+const globalController = {
+  mainController,
+  searchController,
+  hotelController,
+  motelController,
+  campingController,
+  glampingController,
+  hanokController,
+  pensionController,
+  resortController,
+  loginController,
+  menuController,
+};
+
+module.exports = globalController;

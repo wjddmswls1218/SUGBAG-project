@@ -2,6 +2,8 @@
 @import "./main.css";
 @import "./search.css";
 @import "./hotel.css";
+@import "./menu.css";
+
 @media screen and (min-width: 450px) {
   .mobile_srceen {
     display: none;

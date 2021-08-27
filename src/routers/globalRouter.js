@@ -1,6 +1,6 @@
-import express from "express";
+const express = require("express");
 
-import {
+const {
   mainController,
   hotelController,
   motelController,
@@ -10,7 +10,9 @@ import {
   pensionController,
   resortController,
   searchController,
-} from "../controllers/globalController";
+  loginController,
+  menuController,
+} = require("../controllers/globalController");
 
 const globalRouter = express.Router();
 
@@ -23,7 +25,8 @@ globalRouter.get("/glamping", glampingController);
 globalRouter.get("/hanok", hanokController);
 globalRouter.get("/pension", pensionController);
 globalRouter.get("/resort", resortController);
+globalRouter.get("/menu", menuController);
 
 globalRouter.get("/search", searchController);
 
-export default globalRouter;
+module.exports = globalRouter;
