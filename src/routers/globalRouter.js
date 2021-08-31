@@ -29,4 +29,6 @@ globalRouter.get("/menu", menuController);
 
 globalRouter.get("/search", searchController);
 
+globalRouter.post("/login", loginController);
+
 module.exports = globalRouter;

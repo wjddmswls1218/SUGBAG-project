@@ -134,5 +134,5 @@ a {
 }
 
 * {
-  box-sizing: none;
+  box-sizing: border-box;
 }
