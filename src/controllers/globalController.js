@@ -37,6 +37,7 @@ const hotelController = async (req, res) => {
 
 const motelController = async (req, res) => {
   const Productlist = await Product.find({ isDelete: false });
+
   const newData_M = Productlist.filter((data) => data.divide == "motel");
 
   res.render("motel", { mList: newData_M });
