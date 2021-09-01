@@ -1,0 +1,69 @@
+.menuBox {
+  width: 100%;
+  height: 160px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  background-color: #eee;
+
+  display: none;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mainBox {
+  margin-top: 130px;
+
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 50px;
+
+  margin-top: -100px;
+  margin-bottom: 100px;
+
+  text-shadow: 2px 2px 2px rgb(193, 193, 193);
+
+  font-family: "Do Hyeon", sans-serif;
+}
+
+.loginLabel input {
+  width: 300px;
+  height: 50px;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  box-shadow: 0.5px 0.5px 1px 1px rgb(164, 164, 164);
+  border: none;
+  background: none;
+
+  border-radius: 10px;
+}
+
+.mainBox form input[type="submit"] {
+  width: 300px;
+  height: 50px;
+
+  padding: 15px;
+
+  margin-bottom: 10px;
+
+  box-shadow: 0.5px 0.5px 1px 1px rgb(164, 164, 164);
+  border: none;
+  background: none;
+  background-color: rgb(53, 171, 245);
+
+  border-radius: 10px;
+}

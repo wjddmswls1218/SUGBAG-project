@@ -1,4 +1,13 @@
 extends ./base.pug
 
 block content  
-    .
+    .mainBox
+        .logo LOGIN
+        form(action="/login" method="post")
+            .loginLabel
+                input(type="text" name="input_id" placeholder="아이디")
+
+            .loginLabel
+                input(type="password" name="input_pass" placeholder="비밀번호")
+            
+            input(type="submit" value="LOGIN")

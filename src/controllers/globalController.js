@@ -4,6 +4,8 @@ const Product = require("../models/Product");
 const axios = require("axios");
 
 const mainController = async (req, res) => {
+  let loginFlag = req.userLoginFlag || false;
+
   const {
     query: { searchValue },
   } = req;
@@ -77,20 +79,6 @@ const resortController = async (req, res) => {
 };
 
 const menuController = (req, res) => {
-  const loginFlag = req.userLoginFlag || false;
-
-  let isAuthenticated = false;
-
-  if (loginFlag) {
-    isAuthenticated = true;
-  }
-
-  if (isAuthenticated) {
-    mainController(req, res);
-  } else {
-    res.render("main");
-  }
-
   res.render("menu");
 };
 
@@ -100,7 +88,6 @@ const loginController = async (req, res) => {
 
   const input_id = req.body.input_id;
   const input_pass = req.body.input_pass;
-  input_pass = String(input_pass);
 
   try {
     const result = await User.find();
@@ -109,13 +96,12 @@ const loginController = async (req, res) => {
       result.map((user) => {
         if (user.userId === input_id && user.password === input_pass) {
           loginFlag = true;
-
-          sess.userId = user._id;
         }
       })
     );
     req.userLoginFlag = loginFlag;
     mainController(req, res);
+    console.log("[SYSTEN] 로그인 성공");
   } catch (e) {
     console.log(e);
     console.log("[SYSTEN] 로그인에 실패하셨습니다.");
