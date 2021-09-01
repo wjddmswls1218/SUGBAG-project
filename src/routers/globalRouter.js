@@ -12,6 +12,7 @@ const {
   searchController,
   loginController,
   menuController,
+  createController,
 } = require("../controllers/globalController");
 
 const globalRouter = express.Router();
@@ -30,5 +31,6 @@ globalRouter.get("/menu", menuController);
 globalRouter.get("/search", searchController);
 
 globalRouter.post("/login", loginController);
+globalRouter.post("/create", createController);
 
 module.exports = globalRouter;

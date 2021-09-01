@@ -1,8 +1,21 @@
 
-.main
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body
+        section.search 
+            form(action="/" method="get")
+                select(name="seq") 
+                    option(value="hotel") 호텔
+                    option(value="motel") 모텔
+                    option(value="camping") 캠핑
+                    option(value="glamping") 글램핑
+                    option(value="resort") 리조트
+                    option(value="hanok") 한옥
+                    option(value="pension") 펜션
 
-    section.search
-        form(action="#" method="post")
-            input(type="text" name="searchValue" placeholder="검색어를 입력해주세요.")
-            input(type="button" value="search") 
-
+                input(type="text", name="searchValue" placeholder="입력하세요")
+                input(type="submit" value="Serch")

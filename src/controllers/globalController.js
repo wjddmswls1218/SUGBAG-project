@@ -7,12 +7,20 @@ const mainController = async (req, res) => {
   let loginFlag = req.userLoginFlag || false;
 
   const {
-    query: { searchValue },
+    query: { seq, searchValue },
   } = req;
 
-  console.log(searchValue);
-
   try {
+    if (!searchValue) {
+      const products = await Product.find({}, {});
+      res.render("main", { products: products });
+    } else {
+      if (seq === "hotel") {
+        const products = await Product.find({
+          hotel,
+        });
+      }
+    }
   } catch (e) {
     console.log(e);
     res.render("main");
@@ -111,6 +119,10 @@ const loginController = async (req, res) => {
   }
 };
 
+const createController = (req, res) => {
+  res.render("create");
+};
+
 const globalController = {
   mainController,
   searchController,
@@ -123,6 +135,7 @@ const globalController = {
   resortController,
   loginController,
   menuController,
+  createController,
 };
 
 module.exports = globalController;
