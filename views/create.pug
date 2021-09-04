@@ -1,18 +1,47 @@
 extends ./base.pug
 
 block content  
-    form(action="#" method="post")
+    h2 숙박시설 등록하기
+    form(action="/postcreate" method="post")
         div
             Label(for="product_name") 건물 이름
-            input(type="text" id="Product_name" name="Product_name" placeholder="숙박 시설의 이름을 작성하세요")
+            input(type="text" id="product_name" name="product_name" placeholder="건물의 이름을 입력하세요")
 
         div
-            Label(for="product_type") 건물 타입
-            input(type="text" id="product_type" name="product_type" placeholder="숙박 건물의 타입을 작성하세요")
+            Label(for="prosuct_divide") 숙박시설
+            select(id="prosuct_divide" name="prosuct_divide")
+                option(value=false) -----------
+                option(value="hotel") 호텔
+                option(value="motel") 모텔
+                option(value="camping") 캠핑
+                option(value="glcamping") 글램핑
+                option(value="resort") 리조트
+                option(value="pension") 펜션
+                option(value="hanok") 한옥
 
         div
             Label(for="product_price") 예약 가격
-            input(type="text" id="product_price" name="product_price" placeholder="숙박 예약가격을 작성하세요")
+            input(type="text" id="product_price" name="product_price" placeholder="숙박 예약가격을 입력하세요")
 
         div
+            Label(for="product_createdAt") 창립 일
+            input(type="text" id="product_createdAt" name="product_createdAt" placeholder="####-##-##")
+
+        div
+            Label(for="product_hostName") 주인 이름
+            input(type="text" id="product_hostName" name="product_hostName" placeholder="***")
+
+        div
+            Label(for="product_area") 지역
+            input(type="text" id="product_area" name="product_area" )
+
+
+
+        button 등록하기
+
+
+        
+
+
+
         

@@ -23,9 +23,13 @@ app.use("/", globalRouter);
 connect();
 app.use(
   expressSession({
-    secret: "@#@$MYSIGN#@$#$",
+    name: "codeil",
+    secret: '@#@$MYSIGN#@$#$",',
     resave: false,
-    saveUninitiqlized: true,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 100,
+    },
   })
 );
 

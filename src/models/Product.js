@@ -46,9 +46,10 @@ const Product = new Schema(
       required: true,
     },
 
-    socpe: {
+    scope: {
       type: Number,
       required: true,
+      defalut: 0,
     },
 
     divide: {

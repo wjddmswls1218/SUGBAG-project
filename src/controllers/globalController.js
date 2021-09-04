@@ -1,36 +1,29 @@
 const User = require("../models/User");
 const Comment = require("../models/Comment");
 const Product = require("../models/Product");
-const axios = require("axios");
 
 const mainController = async (req, res) => {
   let loginFlag = req.userLoginFlag || false;
 
-  const {
-    query: { seq, searchValue },
-  } = req;
+  let isAuthenticated = false;
 
-  try {
-    if (!searchValue) {
-      const products = await Product.find({}, {});
-      res.render("main", { products: products });
-    } else {
-      if (seq === "hotel") {
-        const products = await Product.find({
-          hotel,
-        });
-      }
-    }
-  } catch (e) {
-    console.log(e);
-    res.render("main");
+  if (loginFlag === true) {
+    isAuthenticated = true;
   }
 
-  res.render("main");
+  if (isAuthenticated) {
+    loginController(req, res);
+  } else {
+    res.render("main");
+  }
 };
 
 const searchController = (req, res) => {
   res.render("search");
+
+  const {
+    query: { seq, searchValue },
+  } = req;
 };
 
 const hotelController = async (req, res) => {
@@ -92,7 +85,6 @@ const menuController = (req, res) => {
 };
 
 const loginController = async (req, res) => {
-  const sess = req.session;
   let loginFlag = false;
 
   const input_id = req.body.input_id;
@@ -103,7 +95,7 @@ const loginController = async (req, res) => {
 
     Promise.all(
       result.map((user) => {
-        if (user.userId === input_id && user.password === input_pass) {
+        if (user.userId == input_id && user.password == input_pass) {
           loginFlag = true;
         }
       })
@@ -114,13 +106,81 @@ const loginController = async (req, res) => {
   } catch (e) {
     console.log(e);
     console.log("[SYSTEN] 로그인에 실패하셨습니다.");
-
-    mainController(req, res);
   }
 };
 
 const createController = (req, res) => {
   res.render("create");
+};
+
+const postcreateController = async (req, res) => {
+  const {
+    body: {
+      product_name,
+      prosuct_divide,
+      product_price,
+      product_createdAt,
+      product_hostName,
+      product_area,
+    },
+  } = req;
+
+  try {
+    const result = await Product.create({
+      Pname: product_name,
+      price: product_price,
+      createdAt: product_createdAt,
+      hostName: product_hostName,
+      area: product_area,
+      divide: prosuct_divide,
+      isDelete: false,
+      isSell: true,
+      scope: 0,
+    });
+    mainController(req, res);
+  } catch (e) {
+    console.log(e);
+    createController(req, res);
+  }
+};
+
+const updataController = (req, res) => {
+  res.render("updata");
+};
+
+const postUpdataController = async (req, res) => {
+  try {
+    const board = await Product.findOne({ _id: req.body.id });
+
+    res.render("updata", { board: board });
+  } catch (e) {
+    console.log(e);
+    res.render("");
+  }
+};
+
+const deleteController = async (req, res) => {
+  try {
+    const productData = await Product.findOne({});
+  } catch (e) {
+    console.log(e);
+    res.render("home");
+  }
+};
+
+const postDeleteController = async (req, res) => {
+  try {
+    const result = await Product.updataOne(
+      { _id: req.body.id },
+      {
+        $set: {
+          isDelelte: true,
+        },
+      }
+    );
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 const globalController = {
@@ -136,6 +196,11 @@ const globalController = {
   loginController,
   menuController,
   createController,
+  postcreateController,
+  updataController,
+  deleteController,
+  postUpdataController,
+  postDeleteController,
 };
 
 module.exports = globalController;

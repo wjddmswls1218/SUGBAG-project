@@ -1,0 +1,7 @@
+extends ./base.pug
+
+block content  
+    h2 숙박시설 수정하기
+        form(action="/updata" method="POST")
+            input(type="hidden" name="id" value=board._id)
+            
